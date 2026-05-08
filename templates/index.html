@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DNA/RNA Analyzer</title>
+</head>
+<body>
+
+<h1>DNA/RNA Sequence Analyzer</h1>
+
+<form method="POST">
+    <textarea name="sequence" placeholder="Paste DNA or RNA sequence here" rows="6" cols="50"></textarea>
+    <br><br>
+    <button type="submit">Analyze</button>
+</form>
+
+<!-- ERROR -->
+{% if error %}
+<p style="color:red">{{ error }}</p>
+{% endif %}
+
+<!-- RESULT -->
+{% if result %}
+
+<h2>Results</h2>
+
+<p><b>Type:</b> {{ result.type }}</p>
+
+<p><b>mRNA:</b> {{ result.mrna }}</p>
+
+<p><b>Codons:</b> {{ result.codons }}</p>
+
+<p><b>Amino Acids:</b> {{ result.amino_acids }}</p>
+
+<p><b>Protein Info:</b> {{ result.protein }}</p>
+
+{% endif %}
+
+</body>
+</html>
